@@ -7,7 +7,7 @@ const Sidebar = () => {
       <h1 className="text-xl font-bold mb-6 text-center border-b-2 border-green-300 pb-2">📊 HEMIS</h1>
       <ul>
         <li className="mb-3">
-          <Link to="/dashboard" className="flex items-center p-2 hover:bg-gray-600 rounded">
+          <Link to="/" className="flex items-center p-2 hover:bg-gray-600 rounded">
             <FaTachometerAlt className="mr-3 text-green-400" /> Dashboard
           </Link>
         </li>

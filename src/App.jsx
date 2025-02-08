@@ -21,7 +21,7 @@ function App() {
       <div className="flex-1 ml-64 p-4">
         <TopBar />
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} />
           <Route path="/students" element={<StudentManagement />} />
           <Route path="/graduates" element={<GraduateManagement />} />
           <Route path="/infrastructure" element={<Infrastructure />} />
