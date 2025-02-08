@@ -1,13 +1,13 @@
 import {  Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import TopBar from "./components/TopBar";
-import Dashboard from "./components/Dashboard";
-import StudentEnrollmentForm from "./components/StudentEnrollmentForm";
-import StudentManagement from "./components/StudentManagement";
-import Infrastructure from "./components/Infrastructure";
-import HEMISReports from "./components/HemisReport";
-import MainContent from "./components/MainContent";
-import GraduateManagement from "./components/GraduteManagement";
+import Sidebar from "./Components/Sidebar";
+import TopBar from "./Components/TopBar";
+import Dashboard from "./Components/Dashboard";
+import StudentEnrollmentForm from "./Components/StudentEnrollmentForm";
+import StudentManagement from "./Components/StudentManagement";
+import Infrastructure from "./Components/Infrastructure";
+import HEMISReports from "./Components/HemisReport";
+import MainContent from "./Components/MainContent";
+import GraduateManagement from "./Components/GraduteManagement";
 
 function App() {
   return (
