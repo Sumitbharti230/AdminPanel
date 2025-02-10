@@ -20,11 +20,11 @@ const Dashboard = () => {
 
   // Pie Chart Data
   const pieData = {
-    labels: ["Students", "Graduates", "Faculty","programs"],
+    labels: ["Students", "Graduates", "Faculty", "programs"],
     datasets: [
       {
-        data: [2543, 486, 124,1400],
-        backgroundColor: ["#3B82F6", "#10B981", "#8B5CF6","#F59E0B"],
+        data: [2543, 486, 124, 1400],
+        backgroundColor: ["#3B82F6", "#10B981", "#8B5CF6", "#F59E0B"],
       },
     ],
   };
@@ -36,7 +36,7 @@ const Dashboard = () => {
 
       {/* Dashboard Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-        
+
         {/* Total Students */}
         <div className="bg-gray-100 p-6 rounded-lg shadow-xl flex items-center gap-4 border-l-4 border-blue-500">
           <FaUsers className="text-blue-500 text-4xl" />
@@ -84,9 +84,11 @@ const Dashboard = () => {
         </div>
 
         {/* Pie Chart */}
-        <div className="bg-gray-100 p-6 rounded-lg shadow-xl">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-xl w-[90%]">
           <h3 className="text-xl font-bold text-gray-800 mb-4">🥧 Distribution</h3>
-          <Pie data={pieData} />
+          <div className="w-[500px] h-80  flex items-center justify-center">
+            <Pie data={pieData} />
+          </div>
         </div>
       </div>
 

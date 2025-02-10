@@ -39,6 +39,8 @@ const StudentManagement = () => {
             <StudentEnrollmentForm />
           </div>
         )}
+
+        <div>this is second </div>
         {/* Other tabs can be implemented here */}
       </div>
     </div>

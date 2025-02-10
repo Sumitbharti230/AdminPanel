@@ -8,6 +8,7 @@ import Infrastructure from "./Components/Infrastructure";
 import HEMISReports from "./Components/HemisReport";
 import MainContent from "./Components/MainContent";
 import GraduateManagement from "./Components/GraduteManagement";
+import CampusRegistrationForm from "./Components/CampusRegistrationForm";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/reports" element={<HEMISReports />} />
           <Route path="/student-enrollment" element={<StudentEnrollmentForm />} />
           <Route path="/main-content" element={<MainContent />} />
+          <Route path="/campusregistrationForm" element={<CampusRegistrationForm />} />
         </Routes>
       </div>
     </div>

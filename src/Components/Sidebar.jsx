@@ -12,7 +12,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className="mb-3">
-          <Link to="/campus" className="flex items-center p-2 hover:bg-gray-600 rounded">
+          <Link to="/campusregistrationForm" className="flex items-center p-2 hover:bg-gray-600 rounded">
             <FaUniversity className="mr-3 text-yellow-400" /> Campus Registration
           </Link>
         </li>
