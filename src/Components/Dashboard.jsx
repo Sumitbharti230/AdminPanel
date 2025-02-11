@@ -1,11 +1,13 @@
 import { FaUserGraduate, FaUsers, FaUniversity, FaBook } from "react-icons/fa";
 import { Bar, Pie } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, ArcElement, Tooltip, Legend } from "chart.js";
+import TopBar from "../Components/TopBar";
 
 // Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, ArcElement, Tooltip, Legend);
 
 const Dashboard = () => {
+
   // Bar Chart Data
   const barData = {
     labels: ["Total Students", "Graduates", "Faculty Members", "Programs"],
@@ -30,7 +32,13 @@ const Dashboard = () => {
   };
 
   return (
+    <>
+  <div>
+    <TopBar />
+    </div>
+
     <div className="p-6">
+      
       {/* Dashboard Title */}
       <h2 className="text-3xl font-bold text-gray-800 mb-6">📊 Welcome, Sir/Ma'am</h2>
 
@@ -93,6 +101,7 @@ const Dashboard = () => {
       </div>
 
     </div>
+    </>
   );
 };
 

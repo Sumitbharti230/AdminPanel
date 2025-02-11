@@ -17,8 +17,8 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className="mb-3">
-          <Link to="/students" className="flex items-center p-2 hover:bg-gray-600 rounded">
-            <FaUsers className="mr-3 text-blue-400" /> Student Management
+          <Link to="/student-enrollment" className="flex items-center p-2 hover:bg-gray-600 rounded">
+            <FaUserPlus className="mr-3 text-pink-400" /> Student Enrollment/Registration
           </Link>
         </li>
         <li className="mb-3">
@@ -51,11 +51,7 @@ const Sidebar = () => {
             <FaFileAlt className="mr-3 text-gray-400" /> HEMIS Reports
           </Link>
         </li>
-        <li className="mb-3">
-          <Link to="/student-enrollment" className="flex items-center p-2 hover:bg-gray-600 rounded">
-            <FaUserPlus className="mr-3 text-pink-400" /> Student Enrollment
-          </Link>
-        </li>
+
         <li className="mb-3">
           <Link to="/main-content" className="flex items-center p-2 hover:bg-gray-600 rounded">
             <FaHome className="mr-3 text-indigo-400" /> Main Content

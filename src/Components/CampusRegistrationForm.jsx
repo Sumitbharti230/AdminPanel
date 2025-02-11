@@ -1,218 +1,159 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const CampusRegistrationModule = () => {
-    const [activeTab, setActiveTab] = useState("campusInfo");
+const CampusRegistrationForm = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        address: "",
+        latitude: "",
+        longitude: "",
+        affiliatingUniversity: "",
+        levelOfStudy: "",
+        facultyDetails: "",
+        contact: "",
+        campusChief: "",
+        campusChiefEmail: "",
+        itEmisDetails: "",
+        academicLevel: "",
+        academicFaculty: "",
+        programOffering: "",
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form Data Submitted:", formData);
+    };
 
     return (
-        <div className="p-6">
-            <h2 className="text-2xl font-bold mb-6">Campus Registration Module</h2>
+        <div className="w-[90%] mx-auto p-8 bg-gray-100 shadow-2xl rounded-lg  ">
+            <h2 className="text-3xl font-bold text-black text-center mb-6">
+                Campus Registration Form
+            </h2>
+            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4 ">
+                {/* Two Column Fields */}
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Campus Name"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                    type="text"
+                    name="address"
+                    placeholder="Address"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
 
-            {/* Tabs Navigation */}
-            <div className="flex gap-4 border-b mb-6">
+                <input
+                    type="text"
+                    name="latitude"
+                    placeholder="Latitude"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                    type="text"
+                    name="longitude"
+                    placeholder="Longitude"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+
+                <input
+                    type="text"
+                    name="affiliatingUniversity"
+                    placeholder="Affiliating University"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                    type="text"
+                    name="levelOfStudy"
+                    placeholder="Level of Study"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+
+                <input
+                    type="text"
+                    name="contact"
+                    placeholder="Contact (Phone, Email)"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                    type="text"
+                    name="campusChief"
+                    placeholder="Campus Chief Name"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+
+                <input
+                    type="email"
+                    name="campusChiefEmail"
+                    placeholder="Campus Chief Email"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+
+                {/* Full-width textarea fields */}
+                <textarea
+                    name="facultyDetails"
+                    placeholder="Faculty and Program Details"
+                    onChange={handleChange}
+                    className="col-span-2 w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+
+                <textarea
+                    name="itEmisDetails"
+                    placeholder="Campus IT/EMIS Focal Person Details"
+                    onChange={handleChange}
+                    className="col-span-2 w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+
+                {/* Academic Section */}
+                <h3 className="col-span-2 text-2xl font-semibold text-black-600 mt-4">
+                    Academic Program Offering
+                </h3>
+
+                <input
+                    type="text"
+                    name="academicLevel"
+                    placeholder="Academic Level"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                    type="text"
+                    name="academicFaculty"
+                    placeholder="Faculty"
+                    onChange={handleChange}
+                    className="w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                    type="text"
+                    name="programOffering"
+                    placeholder="Program Offering"
+                    onChange={handleChange}
+                    className="col-span-2 w-full p-3 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500"
+                />
+
+                {/* Submit Button - Full Width */}
                 <button
-                    onClick={() => setActiveTab("campusInfo")}
-                    className={`pb-2 px-4 transition ${activeTab === "campusInfo"
-                            ? "border-b-2 border-blue-600 text-blue-600 font-semibold"
-                            : "text-gray-500 hover:text-blue-600"
-                        }`}
+                    type="submit"
+                    className="col-span-2 w-60 bg-blue-800 text-white p-3 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition"
                 >
-                    Information about Campus
+                    Submit
                 </button>
-                <button
-                    onClick={() => setActiveTab("academicProgram")}
-                    className={`pb-2 px-4 transition ${activeTab === "academicProgram"
-                            ? "border-b-2 border-blue-600 text-blue-600 font-semibold"
-                            : "text-gray-500 hover:text-blue-600"
-                        }`}
-                >
-                    Academic Program Offering Records
-                </button>
-            </div>
-
-            {/* Tab Content */}
-            <div className="bg-white rounded-lg shadow p-6">
-                {activeTab === "campusInfo" && (
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <label htmlFor="campusName" className="block font-semibold">Campus Name</label>
-                            <input
-                                id="campusName"
-                                placeholder="Campus Name"
-                                className="border p-2 w-full rounded-md"
-                            />
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="space-y-2">
-                                <label htmlFor="province" className="block font-semibold">Province</label>
-                                <input
-                                    id="province"
-                                    placeholder="Province"
-                                    className="border p-2 w-full rounded-md"
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <label htmlFor="district" className="block font-semibold">District</label>
-                                <input
-                                    id="district"
-                                    placeholder="District"
-                                    className="border p-2 w-full rounded-md"
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <label htmlFor="localLevel" className="block font-semibold">Local Level</label>
-                                <input
-                                    id="localLevel"
-                                    placeholder="Local Level"
-                                    className="border p-2 w-full rounded-md"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <label htmlFor="latitude" className="block font-semibold">Latitude</label>
-                                <input
-                                    id="latitude"
-                                    placeholder="Latitude"
-                                    type="number"
-                                    step="any"
-                                    className="border p-2 w-full rounded-md"
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <label htmlFor="longitude" className="block font-semibold">Longitude</label>
-                                <input
-                                    id="longitude"
-                                    placeholder="Longitude"
-                                    type="number"
-                                    step="any"
-                                    className="border p-2 w-full rounded-md"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="affiliatingUniversity" className="block font-semibold">Affiliating University</label>
-                            <input
-                                id="affiliatingUniversity"
-                                placeholder="Affiliating University"
-                                className="border p-2 w-full rounded-md"
-                            />
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="levelOfStudy" className="block font-semibold">Level of Study</label>
-                            <input
-                                id="levelOfStudy"
-                                placeholder="Level of Study"
-                                className="border p-2 w-full rounded-md"
-                            />
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="faculty" className="block font-semibold">Faculty and Program Details</label>
-                            <input
-                                id="faculty"
-                                placeholder="Faculty and Program Details"
-                                className="border p-2 w-full rounded-md"
-                            />
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <label htmlFor="landline" className="block font-semibold">Landline Phone</label>
-                                <input
-                                    id="landline"
-                                    placeholder="Landline Phone"
-                                    type="tel"
-                                    className="border p-2 w-full rounded-md"
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <label htmlFor="mobile" className="block font-semibold">Mobile Number</label>
-                                <input
-                                    id="mobile"
-                                    placeholder="Mobile Number"
-                                    type="tel"
-                                    className="border p-2 w-full rounded-md"
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label htmlFor="email" className="block font-semibold">Email</label>
-                                <input
-                                    id="email"
-                                    placeholder="email"
-                                    type="email"
-                                    className="border p-2 w-full rounded-md"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="campusChief" className="block font-semibold">Campus Chief Name</label>
-                            <input
-                                id="campusChief"
-                                placeholder="Campus Chief Name"
-                                className="border p-2 w-full rounded-md"
-                            />
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="focalPerson" className="block font-semibold">IT/EMIS Focal Person Details</label>
-                            <input
-                                id="focalPerson"
-                                placeholder="IT/EMIS Focal Person Details"
-                                className="border p-2 w-full rounded-md"
-                            />
-                        </div>
-                    </div>
-                )}
-
-                {activeTab === "academicProgram" && (
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <label htmlFor="programLevel" className="block font-semibold">Level</label>
-                            <input
-                                id="programLevel"
-                                placeholder="Level"
-                                className="border p-2 w-full rounded-md"
-                            />
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="faculty" className="block font-semibold">Faculty</label>
-                            <input
-                                id="faculty"
-                                placeholder="Faculty"
-                                className="border p-2 w-full rounded-md"
-                            />
-                        </div>
-
-                        <div className="space-y-2">
-                            <label htmlFor="programOffering" className="block font-semibold">Program Offering</label>
-                            <input
-                                id="programOffering"
-                                placeholder="Program Offering"
-                                className="border p-2 w-full rounded-md"
-                            />
-                        </div>
-                    </div>
-                )}
-
-                {/* Submit Button */}
-                <div className="mt-6">
-                    <button
-                        type="submit"
-                        className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-                    >
-                        Submit Registration
-                    </button>
-                </div>
-            </div>
+            </form>
         </div>
     );
 };
 
-export default CampusRegistrationModule;
+export default CampusRegistrationForm;

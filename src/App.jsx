@@ -20,7 +20,6 @@ function App() {
 
       {/* Main Content - Takes Remaining Space */}
       <div className="flex-1 ml-64 p-4">
-        <TopBar />
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/students" element={<StudentManagement />} />
