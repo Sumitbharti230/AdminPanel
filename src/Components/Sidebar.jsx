@@ -22,6 +22,11 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className="mb-3">
+          <Link to="/teacher_and_staff" className="flex items-center p-2 hover:bg-gray-600 rounded">
+            <FaUserPlus className="mr-3 text-pink-400" /> Teacher and staff Information
+          </Link>
+        </li>
+        <li className="mb-3">
           <Link to="/graduates" className="flex items-center p-2 hover:bg-gray-600 rounded">
             <FaUserGraduate className="mr-3 text-purple-400" /> Graduate Management
           </Link>

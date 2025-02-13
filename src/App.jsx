@@ -9,6 +9,7 @@ import HEMISReports from "./Components/HemisReport";
 import MainContent from "./Components/MainContent";
 import GraduateManagement from "./Components/GraduteManagement";
 import CampusRegistrationForm from "./Components/CampusRegistrationForm";
+import Teacher_and_staff from "./Components/Teacher_and_staff";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/infrastructure" element={<Infrastructure />} />
           <Route path="/reports" element={<HEMISReports />} />
           <Route path="/student-enrollment" element={<StudentEnrollmentForm />} />
+          <Route path="teacher_and_staff" element={<Teacher_and_staff />} />
           <Route path="/main-content" element={<MainContent />} />
           <Route path="/campusregistrationForm" element={<CampusRegistrationForm />} />
         </Routes>
