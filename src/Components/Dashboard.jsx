@@ -92,7 +92,7 @@ const Dashboard = () => {
         </div>
 
         {/* Pie Chart */}
-        <div className="bg-gray-100 p-6 rounded-lg shadow-xl w-[100%]">
+        <div className="bg-gray-100 p-6 rounded-lg shadow-xl w-[100%] flex-wrap">
           <h3 className="text-xl font-bold text-gray-800 mb-4">🥧 Distribution</h3>
           <div className="w-[100%] h-80   flex justify-center">
             <Pie data={pieData} />
