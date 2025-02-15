@@ -27,8 +27,8 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className="mb-3">
-          <Link to="/graduates" className="flex items-center p-2 hover:bg-gray-600 rounded">
-            <FaUserGraduate className="mr-3 text-purple-400" /> Graduate Management
+          <Link to="/studentlist" className="flex items-center p-2 hover:bg-gray-600 rounded">
+            <FaUserGraduate className="mr-3 text-purple-400" /> Student List
           </Link>
         </li>
         <li className="mb-3">
@@ -59,7 +59,7 @@ const Sidebar = () => {
 
         <li className="mb-3">
           <Link to="/main-content" className="flex items-center p-2 hover:bg-gray-600 rounded">
-            <FaHome className="mr-3 text-indigo-400" /> Main Content
+            <FaHome className="mr-3 text-indigo-400" /> One_time_Setting
           </Link>
         </li>
       </ul>

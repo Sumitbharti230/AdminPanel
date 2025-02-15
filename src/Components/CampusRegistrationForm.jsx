@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TopBar from "../Components/TopBar";
+
 
 const CampusRegistrationForm = () => {
     const [formData, setFormData] = useState({
@@ -28,6 +30,11 @@ const CampusRegistrationForm = () => {
     };
 
     return (
+        <>
+<div className="mb-5">
+<TopBar/>
+</div>
+
         <div className="w-[90%] mx-auto p-8 bg-gray-200 shadow-2xl rounded-lg">
             <h2 className="text-3xl font-bold text-black text-center mb-6">
                 Campus Registration Form
@@ -183,6 +190,7 @@ const CampusRegistrationForm = () => {
                 </button>
             </form>
         </div>
+        </>
     );
 };
 

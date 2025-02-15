@@ -1,6 +1,13 @@
 import React from 'react';
+import TopBar from './TopBar';
 
 const GraduateManagement = () => (
+
+<>
+  <div className='mb-5'>
+
+    <TopBar/>
+  </div>
   <div className="p-6">
     <h2 className="text-2xl font-bold mb-6">Graduate Management</h2>
     <div className="bg-white rounded-lg shadow p-6">
@@ -43,6 +50,8 @@ const GraduateManagement = () => (
       </table>
     </div>
   </div>
+  </>
+
 );
 
 export default GraduateManagement;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TopBar from "../Components/TopBar";
 
 const TeacherStaffForm = () => {
     const [step, setStep] = useState(1);
@@ -7,6 +8,13 @@ const TeacherStaffForm = () => {
     const prevStep = () => setStep(step - 1);
 
     return (
+        <>
+
+
+        <div>
+        <TopBar />
+        </div>
+        
         <div className="w-[90%] mx-auto p-8 bg-gray-200 shadow-2xl rounded-lg">
             <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
                 🏫 Teacher & Staff Information Form
@@ -236,6 +244,7 @@ const TeacherStaffForm = () => {
                 </div>
             </form>
         </div>
+        </>
     );
 };
 
