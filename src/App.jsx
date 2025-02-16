@@ -1,6 +1,5 @@
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Sidebar from "./Components/Sidebar";
-import TopBar from "./Components/TopBar";
 import Dashboard from "./Components/Dashboard";
 import StudentEnrollmentForm from "./Components/StudentEnrollmentForm";
 import StudentManagement from "./Components/StudentManagement";
@@ -11,17 +10,20 @@ import Studentlist from "./Components/Studentlist";
 import CampusRegistrationForm from "./Components/CampusRegistrationForm";
 import Teacher_and_staff from "./Components/Teacher_and_staff";
 import LoginPage from "./Components/Login";
+import CampusList from "./Components/campuslist";
+import FacultyListTable from "./Components/FacultyList";
+import AddFaculty from "./Components/AddFaculty";
 
 function App() {
   return (
-    <div className="flex h-screen">
-      {/* Sidebar - Fixed on the left */}
-      <div className="w-64 bg-gray-800 text-white fixed h-full">
+    <div className="flex h-screen overflow-hidden">
+      {/* Sidebar - Scrollable */}
+      <div>
         <Sidebar />
       </div>
 
-      {/* Main Content - Takes Remaining Space */}
-      <div className="flex-1 ml-64 p-4">
+      {/* Main Content - Also Scrollable */}
+      <div className="flex-1 overflow-y-auto h-full p-4">
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/students" element={<StudentManagement />} />
@@ -32,7 +34,10 @@ function App() {
           <Route path="teacher_and_staff" element={<Teacher_and_staff />} />
           <Route path="/main-content" element={<MainContent />} />
           <Route path="/campusregistrationForm" element={<CampusRegistrationForm />} />
+          <Route path="/campuslist" element={<CampusList />} />
           <Route path="/Login" element={<LoginPage />} />
+          <Route path="/facultylisttable" element={<FacultyListTable />} />
+          <Route path="/Addfaculty" element={<AddFaculty />} />
         </Routes>
       </div>
     </div>
