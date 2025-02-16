@@ -13,6 +13,7 @@ import LoginPage from "./Components/Login";
 import CampusList from "./Components/campuslist";
 import FacultyListTable from "./Components/FacultyList";
 import AddFaculty from "./Components/AddFaculty";
+import TeacherList from "./Components/Teacherlist";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
           <Route path="/studentlist" element={<Studentlist />} />
           <Route path="/infrastructure" element={<Infrastructure />} />
           <Route path="/reports" element={<HEMISReports />} />
-          <Route path="/student-enrollment" element={<StudentEnrollmentForm />} />
+          <Route path="/studentregistration" element={<StudentEnrollmentForm />} />
           <Route path="teacher_and_staff" element={<Teacher_and_staff />} />
           <Route path="/main-content" element={<MainContent />} />
           <Route path="/campusregistrationForm" element={<CampusRegistrationForm />} />
@@ -38,6 +39,7 @@ function App() {
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/facultylisttable" element={<FacultyListTable />} />
           <Route path="/Addfaculty" element={<AddFaculty />} />
+          <Route path="/teacherlist" element={<TeacherList />} />
         </Routes>
       </div>
     </div>

@@ -10,7 +10,7 @@ const StudentRegistrationForm = () => {
 
     return (
         <>
-            <div>
+            <div className="mb-5">
                 <TopBar />
             </div>
             <div className="w-[90%] mx-auto p-8 bg-gray-200 shadow-2xl rounded-lg">
