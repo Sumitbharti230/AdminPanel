@@ -3,24 +3,33 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import TopBar from "./TopBar";
 
 const FacultyListTable = () => {
-  const baseUrl = import.meta.env.VITE_BASE_URL;
+  const [data, setData] = useState([]);
+  
+  const getFacultyList = async () => {
+    try {
+      const response = await fetch("161.97.124.77:8088/v1/faculty/list");
 
-  const [data, setdata] = useState([]);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
 
-  const getFacultylist = async () => {
+      const result = await response.json(); // Ensure the response is JSON
+      console.log("Fetched data:", result);
 
-      let response = await fetch(`${baseUrl}/faculty/list`);
-      console.log(response)
-
-      response = await response.json();
-      console.log(response.data)
-      setdata(response.data); 
-
-
-    } 
+      if (result.success && Array.isArray(result.data)) {
+        setData(result.data);
+      } else {
+        console.error("Unexpected data format:", result);
+        setData([]);
+      }
+    } catch (error) {
+      console.error("Error fetching faculty list:", error);
+      setData([]);
+    }
+  };
 
   useEffect(() => {
-    getFacultylist();
+    getFacultyList();
   }, []);
 
   return (
@@ -39,11 +48,9 @@ const FacultyListTable = () => {
             </tr>
           </thead>
           <tbody>
-
             {data.length > 0 ? (
-              data.map((faculty) => (
-
-                <tr key={faculty.id} className="hover:bg-gray-50">
+              data.map((faculty, index) => (
+                <tr key={index} className="hover:bg-gray-50">
                   <td className="py-3 px-6 border-b">{faculty.facultyName}</td>
                   <td className="py-3 px-6 border-b">{faculty.facultyCode}</td>
                   <td className="py-3 px-6 border-b text-center">
