@@ -18,10 +18,10 @@ const TopBar = () => {
           >
             Login
           </button>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+          {/* <button className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2">
             <Download size={20} />
             Export Data
-          </button>
+          </button> */}
           <div className="bg-amber-400 w-9 h-9 rounded-full"></div>
         </div>
       </div>
