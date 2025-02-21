@@ -6,21 +6,17 @@ const base_Url = import.meta.env.VITE_BASE_URL; // Ensure this is set in your .e
 const AddFaculty = () => {
   const [facultyName, setFacultyName] = useState("");
   const [facultyCode, setFacultyCode] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError("");
-    setSuccess("");
+    setError(null);
+    setSuccess(null);
 
     try {
-      // Prepare the data to be sent
       const payload = { facultyName, facultyCode };
 
-      // Send POST request to create a new faculty
       const response = await fetch(`${base_Url}/faculty/create`, {
         method: "POST",
         headers: {
@@ -29,24 +25,18 @@ const AddFaculty = () => {
         body: JSON.stringify(payload),
       });
 
-      // Check if the request was successful
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to create faculty");
+        throw new Error(data.message || "Failed to create faculty");
       }
 
-      // Optionally, parse the JSON response
-      const result = await response.json();
-      console.log("Faculty created:", result);
-
-      // Set success message and clear form fields
-      setSuccess("Faculty created successfully!");
+      setSuccess("Faculty added successfully!");
       setFacultyName("");
       setFacultyCode("");
     } catch (err) {
       console.error("Error creating faculty:", err);
       setError(err.message);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -56,15 +46,36 @@ const AddFaculty = () => {
         <TopBar />
       </div>
 
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-white shadow-md rounded">
+      <form
+        onSubmit={submitForm}
+        className="max-w-md mx-auto p-5 bg-gray-100  shadow-xl rounded-sm border-slate-200 border flex flex-wrap flex-col"
+      >
+        <h1 className="text-2xl items-center flex justify-center mb-5 font-bold">Faculty Form</h1>
+
+
+        {error && (
+          <div className="mb-4 p-3 text-red-800 font-bold bg-red-200 rounded">
+            {error}
+          </div>
+        )}
+        {success && (
+          <div className="mb-6 p-3 text-green-800 font-bold bg-green-200 rounded">
+            {success}
+          </div>
+        )}
+
+
+
         <div className="mb-4">
-          <label htmlFor="facultyName" className="block text-gray-700 font-medium mb-2">
+          <label
+            htmlFor="facultyName"
+            className="block text-gray-700 font-medium mb-2"
+          >
             Faculty Name
           </label>
           <input
             type="text"
             id="facultyName"
-            name="facultyName"
             value={facultyName}
             onChange={(e) => setFacultyName(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
@@ -72,14 +83,17 @@ const AddFaculty = () => {
             required
           />
         </div>
+
         <div className="mb-4">
-          <label htmlFor="facultyCode" className="block text-gray-700 font-medium mb-2">
+          <label
+            htmlFor="facultyCode"
+            className="block text-gray-700 font-medium mb-2"
+          >
             Faculty Code
           </label>
           <input
             type="text"
             id="facultyCode"
-            name="facultyCode"
             value={facultyCode}
             onChange={(e) => setFacultyCode(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
@@ -87,14 +101,13 @@ const AddFaculty = () => {
             required
           />
         </div>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
-        {success && <p className="text-green-500 mb-4">{success}</p>}
+
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-200"
-          disabled={loading}
+          title="submit"
+          className="w-full py-2 px-4 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition duration-200"
         >
-          {loading ? "Submitting..." : "Submit"}
+          Add Faculty
         </button>
       </form>
     </>

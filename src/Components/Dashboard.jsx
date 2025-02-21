@@ -87,13 +87,13 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20 ">
         {/* Bar Chart */}
         <div className="bg-gray-100 p-6 rounded-lg shadow-xl">
-          <h3 className="text-xl font-bold text-gray-800 mb-4 ">📊 Student & Faculty Stats</h3>
+          <h3 className="text-xl font-bold text-gray-800 mb-4 "> Student & Faculty Stats</h3>
           <Bar data={barData} className="mt-11" />
         </div>
 
         {/* Pie Chart */}
         <div className="bg-gray-100 p-6 rounded-lg shadow-xl w-[100%] flex-wrap">
-          <h3 className="text-xl font-bold text-gray-800 mb-4">🥧 Distribution</h3>
+          <h3 className="text-xl font-bold text-gray-800 mb-4"> Distribution</h3>
           <div className="w-[100%] h-80   flex justify-center">
             <Pie data={pieData} />
           </div>

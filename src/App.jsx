@@ -14,6 +14,7 @@ import CampusList from "./Components/campuslist";
 import FacultyListTable from "./Components/FacultyList";
 import AddFaculty from "./Components/AddFaculty";
 import TeacherList from "./Components/Teacherlist";
+import EditFaculty from "./Components/EditFaculty";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path="/Login" element={<LoginPage />} />
           <Route path="/facultylisttable" element={<FacultyListTable />} />
           <Route path="/Addfaculty" element={<AddFaculty />} />
+          <Route path="/editfaculty" element={<EditFaculty />} />
           <Route path="/teacherlist" element={<TeacherList />} />
         </Routes>
       </div>
