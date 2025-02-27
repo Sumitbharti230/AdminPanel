@@ -1,46 +1,74 @@
 import React, { useState, useEffect } from "react";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { FaEdit, FaTrash, FaEye } from "react-icons/fa";
 import TopBar from "./TopBar";
-import { FaEye } from "react-icons/fa";
-import {  useNavigate } from "react-router-dom";
-
-
+import { useNavigate } from "react-router-dom";
 
 const base_Url = import.meta.env.VITE_BASE_URL;
-
 
 const FacultyListTable = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-
-
+  // Fetch data function with token in header
   const getData = async () => {
-    let response = await fetch(`${base_Url}/faculty/list`);
-    let result = await response.json();
-    console.log(result);
+    const token = localStorage.getItem("token"); // Retrieve token from localStorage
+    console.log("The login token is:", token);
 
-    setData(result.data);
-  }
+    if (!token) {
+      console.error("No token found, user may not be logged in");
+      return;
+    }
+
+    try {
+      const response = await fetch(`${base_Url}/faculty/list`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${token}`, 
+        },
+      });
+
+      console.log("Response status:", response.status); // Log response status
+
+      if (response.status === 401) {
+        console.error("Unauthorized! Token might be invalid or expired.");
+        return;
+      }
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      console.log("Faculty data:", result); // Log actual data
+      setData(result.data); // Assuming API response has a `data` field
+
+    } catch (error) {
+      console.error("Error fetching faculty data:", error);
+    }
+  };
+
 
   useEffect(() => {
+    getData(); // Call the getData function to fetch faculty data
+  }, []); // Empty dependency array means this runs only once after initial render
 
-    getData()
-  }, [])
 
+  
   return (
     <>
       <div className=" mb-5">
         <TopBar />
       </div>
 
-
-      <div className="flex flex-col   shadow-2xl p-2 ">
-        <div className="flex bg-gray-300 font-bold p-3 border-gray-300 text-slate-800  rounded-sm ">
+      <div className="flex flex-col shadow-2xl p-2">
+        <div className="flex bg-gray-300 font-bold p-3 border-gray-300 text-slate-800 rounded-sm">
           <div className="w-1/3">Faculty Name</div>
           <div className="w-1/3">Faculty Code</div>
           <div className="w-1/3 text-center">Actions</div>
         </div>
+
         {data.length > 0 ? (
           data.map((faculty) => (
             <div
@@ -51,11 +79,16 @@ const FacultyListTable = () => {
               <div className="w-1/3">{faculty.facultyCode}</div>
               <div className="w-1/3 flex justify-center space-x-4">
                 <button title="View">
-                  <FaEye className=" hover:text-blue-700" />
+                  <FaEye className="hover:text-blue-700" />
                 </button>
 
-                <button title="Edit" >
-                  <FaEdit onClick={()=>{navigate('/editfaculty',{state:faculty})}} className="text-blue-500 hover:text-blue-700" />
+                <button title="Edit">
+                  <FaEdit
+                    onClick={() => {
+                      navigate("/editfaculty", { state: faculty });
+                    }}
+                    className="text-blue-500 hover:text-blue-700"
+                  />
                 </button>
 
                 <button title="Delete">
@@ -82,13 +115,8 @@ const FacultyListTable = () => {
           </div>
         )}
       </div>
-
-
-
     </>
-
   );
-
 };
 
 export default FacultyListTable;

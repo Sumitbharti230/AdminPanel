@@ -1,8 +1,16 @@
 import React from 'react';
 import { Search, Download } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { FaUserCircle } from "react-icons/fa";
+
 
 const TopBar = () => {
+
+  const user = JSON.parse(localStorage.getItem("user")); // Get user details
+console.log(user)
+
+
+
   const navigate = useNavigate(); // Move the hook inside the component
 
   return (
@@ -13,16 +21,17 @@ const TopBar = () => {
         </div>
         <div className="flex items-center gap-4">
           <button 
-            onClick={() => navigate('/login')} // Use navigate instead of Navigate
-            className="bg-blue-600 font-bold p-2 rounded-2xl text-white w-24"
+            // Use navigate instead of Navigate
+            className="bg-red-600 font-bold p-2 rounded-2xl text-slate-100 w-20"
           >
-            Login
+            Logout
           </button>
           {/* <button className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2">
             <Download size={20} />
             Export Data
           </button> */}
-          <div className="bg-amber-400 w-9 h-9 rounded-full"></div>
+          <div className=" font-bold text-4xl"><FaUserCircle />
+          </div>
         </div>
       </div>
     </div>

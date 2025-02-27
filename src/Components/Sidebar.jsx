@@ -275,7 +275,7 @@ const Sidebar = () => {
                     <ul className="ml-4 mt-1 bg-gray-300 rounded shadow-md">
                       <li>
                         <Link
-                          to="/levellist"
+                          to="/levellisttable"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           level List
@@ -283,7 +283,7 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          to="/add-level"
+                          to="/levelform"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           Add level
@@ -310,7 +310,7 @@ const Sidebar = () => {
                     <ul className="ml-4 mt-1 bg-gray-300 rounded shadow-md">
                       <li>
                         <Link
-                          to="/Programlist"
+                          to="/programlisttable"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           Program List
@@ -318,7 +318,7 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          to="/add-Program"
+                          to="/programform"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           Add Program
@@ -344,7 +344,7 @@ const Sidebar = () => {
                     <ul className="ml-4 mt-1 bg-gray-300 rounded shadow-md">
                       <li>
                         <Link
-                          to="/Castelist"
+                          to="/castelisttable"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           Caste List
@@ -352,10 +352,10 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          to="/add-Caste"
+                          to="/casteform"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
-                          Add Caste
+                          Create Caste
                         </Link>
                       </li>
                     </ul>
@@ -378,7 +378,7 @@ const Sidebar = () => {
                     <ul className="ml-4 mt-1 bg-gray-300 rounded shadow-md">
                       <li>
                         <Link
-                          to="/Disability-Typelist"
+                          to="/disabilitylist"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           Disability-Type List
@@ -386,10 +386,10 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          to="/add-Disability-Type"
+                          to="/disabilityform"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
-                          Add Disability-Type
+                          Create Disability-Type
                         </Link>
                       </li>
                     </ul>
@@ -413,7 +413,7 @@ const Sidebar = () => {
                     <ul className="ml-4 mt-1 bg-gray-300 rounded shadow-md">
                       <li>
                         <Link
-                          to="/Affiliatedlist"
+                          to="/affiliatedlist"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           Affiliated List
@@ -421,10 +421,10 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          to="/add-Affiliated"
+                          to="/affiliatedform"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
-                          Add Affiliated
+                          Create Affiliated
                         </Link>
                       </li>
                     </ul>
