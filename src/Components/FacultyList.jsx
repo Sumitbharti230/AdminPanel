@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaEdit, FaTrash, FaEye } from "react-icons/fa";
-import TopBar from "./TopBar";
+import TopBar from "../Components/TopBar";
 import { useNavigate } from "react-router-dom";
 
 const base_Url = import.meta.env.VITE_BASE_URL;
@@ -11,7 +11,7 @@ const FacultyListTable = () => {
 
   // Fetch data function with token in header
   const getData = async () => {
-    const token = localStorage.getItem("token"); // Retrieve token from localStorage
+    let token = localStorage.getItem("token"); // Retrieve token from localStorage
     console.log("The login token is:", token);
 
     if (!token) {
@@ -22,10 +22,11 @@ const FacultyListTable = () => {
     try {
       const response = await fetch(`${base_Url}/faculty/list`, {
         method: "GET",
+        credentials: "include", // Ensures cookies and auth headers are sent
         headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-          "Authorization": `Bearer ${token}`, 
+          // "Content-Type": "application/json",
+         // "Accept": "application/json",
+          "Authorization": `Bearer ${token}`,
         },
       });
 
@@ -55,7 +56,7 @@ const FacultyListTable = () => {
   }, []); // Empty dependency array means this runs only once after initial render
 
 
-  
+
   return (
     <>
       <div className=" mb-5">

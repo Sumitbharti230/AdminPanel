@@ -7,14 +7,14 @@ const base_Url = import.meta.env.VITE_BASE_URL;
 export default function LoginPage({ setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false); // "Remember Me" state
+  // const [rememberMe, setRememberMe] = useState(false); // "Remember Me" state
   const [errorMessage, setErrorMessage] = useState(""); // Error state
   const navigate = useNavigate();
 
   // Handle Remember Me checkbox
-  const handleRememberChange = (e) => {
-    setRememberMe(e.target.checked);
-  };
+  // const handleRememberChange = (e) => {
+  //   setRememberMe(e.target.checked);
+  // };
 
   // Handle Login
   const handleLogin = async (e) => {
@@ -35,14 +35,14 @@ export default function LoginPage({ setIsAuthenticated }) {
         console.log("Login successful:", data);
 
         // Always store in sessionStorage
-        sessionStorage.setItem("token", data.data.token);
+        localStorage.setItem("token", data.data.token);
 
         // If "Remember Me" is checked, also store in localStorage
-        if (rememberMe) {
-          localStorage.setItem("token", data.data.token);
-        }
+        // if (rememberMe) {
+        //   localStorage.setItem("token", data.data.token);
+        // }
 
-        // ✅ Update authentication state in App.js
+        //  Update authentication state in App.js
         setIsAuthenticated(true);
 
         navigate("/"); // Redirect to home
@@ -51,14 +51,14 @@ export default function LoginPage({ setIsAuthenticated }) {
       }
     } catch (error) {
       console.error("Error logging in:", error);
-      setErrorMessage("Something went wrong. Please try again.");
+      setErrorMessage("Invalid username or password!");
     }
   };
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-200">
       <div className="bg-white p-8 rounded-2xl shadow-lg w-96">
-        <h2 className="text-2xl font-semibold text-center mb-6">Hemis Login</h2>
+        <h2 className="text-2xl font-semibold text-center mb-6">HEMIS Login</h2>
 
         <form onSubmit={handleLogin}>
           <div className="mb-4">
