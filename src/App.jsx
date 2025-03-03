@@ -17,7 +17,7 @@ import EditFaculty from "./Components/EditFaculty";
 import TeacherList from "./Components/TeacherList";
 import FacultyListTable from "./Components/FacultyList";
 import LevelForm from "./Components/AddLevel";
-import LevelListTable from "./Components/levelList";
+import LevelListTable from "./Components/LevelList";
 import ProgramForm from "./Components/CreateProgram";
 import ProgramListTable from "./Components/ProgramList";
 import CasteForm from "./Components/CreateCaste";
