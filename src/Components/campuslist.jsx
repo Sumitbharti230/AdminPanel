@@ -1,6 +1,6 @@
 import React from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import TopBar from "../Components/TopBar";
+import TopBar from "./TopBar";
 
 const CampusList = ({ campuses, handleEdit, handleDelete }) => {
     return (
