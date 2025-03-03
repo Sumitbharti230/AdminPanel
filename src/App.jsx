@@ -15,7 +15,7 @@ import CampusRegistrationForm from "./Components/CampusRegistrationForm";
 import LoginPage from "./Components/Login";
 import AddFaculty from "./Components/AddFaculty";
 import EditFaculty from "./Components/EditFaculty";
-import TeacherList from "./Components/TeacherList";
+import TeacherList from "./Components/Teacherlist";
 import FacultyListTable from "./Components/FacultyList";
 import LevelForm from "./Components/AddLevel";
 import LevelListTable from "./Components/LevelList";
