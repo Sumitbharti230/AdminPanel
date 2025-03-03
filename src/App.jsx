@@ -10,7 +10,8 @@ import StudentEnrollmentForm from "./Components/StudentEnrollmentForm";
 import Teacher_and_staff from "./Components/Teacher_and_staff";
 import MainContent from "./Components/MainContent";
 import CampusRegistrationForm from "./Components/CampusRegistrationForm";
-import CampusList from "./Components/CampusList";
+
+
 import LoginPage from "./Components/Login";
 import AddFaculty from "./Components/AddFaculty";
 import EditFaculty from "./Components/EditFaculty";
