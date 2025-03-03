@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaEdit, FaTrash, FaEye } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import TopBar from "./TopBar"; // Assuming you already have this component
+import TopBar from "../Components/TopBar"; // Assuming you already have this component
 
 const base_Url = import.meta.env.VITE_BASE_URL;
 
-const LevelListTable = () => {
+const LevelList = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
@@ -115,4 +115,4 @@ const LevelListTable = () => {
   );
 };
 
-export default LevelListTable;
+export default LevelList;
