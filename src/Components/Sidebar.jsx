@@ -73,7 +73,6 @@ const Sidebar = () => {
                     className="px-4 py-3 flex items-center hover:bg-gray-100 rounded-t-lg transition-all"
                   >
                     <span className="font-medium">Campus List</span>
-                    <CiCircleList className="ml-auto text-black text-xl" />
                   </Link>
                 </li>
 
@@ -83,7 +82,6 @@ const Sidebar = () => {
                     className="px-4 py-3 flex items-center hover:bg-gray-100 rounded-b-lg transition-all"
                   >
                     <span className="font-medium">Campus Registration</span>
-                    <IoMdAdd className="ml-auto text-black rounded-full p-1 text-2xl" />
                   </Link>
                 </li>
               </ul>
@@ -114,7 +112,6 @@ const Sidebar = () => {
                     className="px-4 py-3 flex items-center hover:bg-gray-100 rounded-t-lg transition-all"
                   >
                     <span className="font-medium">Student List</span>
-                    <CiCircleList className="ml-auto text-black text-xl" />
                   </Link>
                 </li>
 
@@ -124,7 +121,6 @@ const Sidebar = () => {
                     className="px-4 py-3 flex items-center hover:bg-gray-100 rounded-b-lg transition-all"
                   >
                     <span className="font-medium">Student Registration</span>
-                    <IoMdAdd className="ml-auto text-black rounded-full p-1 text-2xl" />
                   </Link>
                 </li>
                 
@@ -447,7 +443,7 @@ const Sidebar = () => {
                     <ul className="ml-4 mt-1 bg-gray-300 rounded shadow-md">
                       <li>
                         <Link
-                          to="/Ethniclist"
+                          to="/ethniclist"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           Ethnic List
@@ -455,10 +451,10 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          to="/add-Ethnic"
+                          to="/ethnicform"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
-                          Add Ethnic
+                          Create Ethnic
                         </Link>
                       </li>
                     </ul>
@@ -482,7 +478,7 @@ const Sidebar = () => {
                     <ul className="ml-4 mt-1 bg-gray-300 rounded shadow-md">
                       <li>
                         <Link
-                          to="/phy-infrastructurelist"
+                          to="/phyinfrastructurelist"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           phy-infrastructure List
@@ -490,10 +486,10 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          to="/add-phy-infrastructure"
+                          to="/phyinfrastructureform"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
-                          Add phy-infrastructure
+                          Create infrastructure
                         </Link>
                       </li>
                     </ul>
@@ -550,7 +546,7 @@ const Sidebar = () => {
                     <ul className="ml-4 mt-1 bg-gray-300 rounded shadow-md">
                       <li>
                         <Link
-                          to="/Study-Semesterlist"
+                          to="/semesterlist"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
                           Study-Semester List
@@ -558,10 +554,10 @@ const Sidebar = () => {
                       </li>
                       <li>
                         <Link
-                          to="/add-Study-Semester"
+                          to="/semesterform"
                           className="block px-4 py-2 hover:bg-gray-400"
                         >
-                          Add Study-Semester
+                          Create Study-Semester
                         </Link>
                       </li>
                     </ul>

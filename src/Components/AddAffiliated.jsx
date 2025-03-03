@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AffiliationForm = () => {
+const AffiliatedForm = () => {
   const [formData, setFormData] = useState({
     affiliatedName: "",
     affiliatedCode: "",
@@ -25,6 +25,9 @@ const AffiliationForm = () => {
   };
 
   return (
+<>
+
+
     <div className="max-w-lg mx-auto mt-10 bg-white p-6 shadow-md rounded-lg">
       <h2 className="text-2xl font-bold text-gray-800 text-center mb-5">
         Affiliation Form
@@ -85,7 +88,11 @@ const AffiliationForm = () => {
         </button>
       </form>
     </div>
+
+
+    </>
+
   );
 };
 
-export default AffiliationForm;
+export default AffiliatedForm;

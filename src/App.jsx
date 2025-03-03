@@ -24,8 +24,14 @@ import CasteForm from "./Components/CreateCaste";
 import CasteListTable from "./Components/CasteList";
 import DisabilityForm from "./Components/DisabilityForm";
 import DisabilityListTable from "./Components/DisabilityList";
-import AffiliatedForm from "./Components/AddAffiliated";
 import AffiliatedList from "./Components/AffiliatedList";
+import AffiliatedForm from "./Components/AddAffiliated";
+import EthnicForm from "./Components/AddEthnic";
+import EthnicList from "./Components/EthnicList";
+import PhyInfrastructureForm from "./Components/Phy-InfrastructureForm";
+import PhyInfrastructureList from "./Components/Phy-InfrasturctureList"
+import SemesterForm from "./Components/SemesterForm";
+import SemesterList from "./Components/SemesterList";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -74,6 +80,12 @@ export default function App() {
                   <Route path="/disabilitylist" element={<DisabilityListTable />} />  
                   <Route path="/affiliatedform" element={<AffiliatedForm />} />  
                   <Route path="/affiliatedlist" element={<AffiliatedList />} />  
+                  <Route path="/ethnicform" element={<EthnicForm />} />
+                  <Route path="/ethniclist" element={<EthnicList />} />
+                  <Route path="/phyinfrastructureform" element={<PhyInfrastructureForm />} />
+                  <Route path="/phyinfrastructurelist" element={<PhyInfrastructureList />} />
+                  <Route path="/semesterform" element={<SemesterForm />} />
+                  <Route path="/semesterlist" element={<SemesterList />} />
                 </Routes>
               </div>
             </div>

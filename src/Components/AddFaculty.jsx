@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TopBar from "./TopBar";
+import TopBar from "../Components/TopBar";
 
 const base_Url = import.meta.env.VITE_BASE_URL; // Ensure this is set in your .env file
 
@@ -42,74 +42,72 @@ const AddFaculty = () => {
 
   return (
     <>
-      <div className="mb-5">
+      <div className="mb-3">
         <TopBar />
       </div>
 
-      <form
-        onSubmit={submitForm}
-        className="max-w-md mx-auto p-5 bg-gray-100  shadow-xl rounded-sm border-slate-200 border flex flex-wrap flex-col"
-      >
-        <h1 className="text-2xl items-center flex justify-center mb-5 font-bold">Faculty Form</h1>
+      <div className="flex  justify-center  bg-gray-50 p-3">
+        <div className="w-full max-w-3xl bg-white p-8 shadow-lg rounded-lg border border-gray-300 mt-5">
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
+            Faculty Form
+          </h2>
 
+          {error && (
+            <div className="mb-4 p-3 text-red-800 font-semibold bg-red-200 rounded">
+              {error}
+            </div>
+          )}
+          {success && (
+            <div className="mb-4 p-3 text-green-800 font-semibold bg-green-200 rounded">
+              {success}
+            </div>
+          )}
 
-        {error && (
-          <div className="mb-4 p-3 text-red-800 font-bold bg-red-200 rounded">
-            {error}
-          </div>
-        )}
-        {success && (
-          <div className="mb-6 p-3 text-green-800 font-bold bg-green-200 rounded">
-            {success}
-          </div>
-        )}
+          <form onSubmit={submitForm} className="space-y-6">
+            {/* Faculty Name */}
+            <div>
+              <label className="block text-gray-700 font-semibold mb-1">
+                Faculty Name:
+              </label>
+              <input
+                type="text"
+                id="facultyName"
+                value={facultyName}
+                onChange={(e) => setFacultyName(e.target.value)}
+                className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                placeholder="Enter Faculty Name"
+                required
+              />
+            </div>
 
+            {/* Faculty Code */}
+            <div>
+              <label className="block text-gray-700 font-semibold mb-1">
+                Faculty Code:
+              </label>
+              <input
+                type="text"
+                id="facultyCode"
+                value={facultyCode}
+                onChange={(e) => setFacultyCode(e.target.value)}
+                className="w-full mt-2 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                placeholder="Enter Faculty Code"
+                required
+              />
+            </div>
 
-
-        <div className="mb-4">
-          <label
-            htmlFor="facultyName"
-            className="block text-gray-700 font-medium mb-2"
-          >
-            Faculty Name
-          </label>
-          <input
-            type="text"
-            id="facultyName"
-            value={facultyName}
-            onChange={(e) => setFacultyName(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
-            placeholder="Enter Faculty Name"
-            required
-          />
+            {/* Submit Button */}
+            <div className="flex justify-center">
+            <button
+              type="submit"
+              className=" bg-blue-600 p-3 text-white rounded-lg hover:bg-blue-700 transition duration-300 text-lg font-semibold"
+            >
+              Add Faculty
+            </button>
+            </div>
+          </form>
         </div>
-
-        <div className="mb-4">
-          <label
-            htmlFor="facultyCode"
-            className="block text-gray-700 font-medium mb-2"
-          >
-            Faculty Code
-          </label>
-          <input
-            type="text"
-            id="facultyCode"
-            value={facultyCode}
-            onChange={(e) => setFacultyCode(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:border-blue-300"
-            placeholder="Enter Faculty Code"
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          title="submit"
-          className="w-full py-2 px-4 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition duration-200"
-        >
-          Add Faculty
-        </button>
-      </form>
+      </div>
     </>
   );
 };

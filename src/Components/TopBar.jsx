@@ -17,7 +17,7 @@ console.log(user)
     <div className="bg-white shadow-sm p-4">
       <div className="flex justify-between items-center">
         <div className="flex gap-4">
-          <h1 className='font-bold text-3xl '>Welcome</h1>
+          <h1 className='font-bold text-3xl '>Welcome sir/maam</h1>
         </div>
         <div className="flex items-center gap-4">
           <button 
