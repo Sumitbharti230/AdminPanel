@@ -18,7 +18,7 @@ import EditFaculty from "./Components/EditFaculty";
 import TeacherList from "./Components/Teacherlist";
 import FacultyListTable from "./Components/FacultyList";
 import LevelForm from "./Components/AddLevel";
-import LevelListTable from "./Components/LevelList";
+import LevelList from "./Components/LevelList";
 import ProgramForm from "./Components/CreateProgram";
 import ProgramListTable from "./Components/ProgramList";
 import CasteForm from "./Components/CreateCaste";
@@ -72,7 +72,7 @@ export default function App() {
                   <Route path="/editfaculty" element={<EditFaculty />} />
                   <Route path="/teacherlist" element={<TeacherList />} />  
                   <Route path="/levelform" element={<LevelForm />} />  
-                  <Route path="/levellisttable" element={<LevelListTable />} />  
+                  <Route path="/levellisttable" element={<LevelList />} />  
                   <Route path="/programform" element={<ProgramForm />} />  
                   <Route path="/programlisttable" element={<ProgramListTable />} />  
                   <Route path="/casteform" element={<CasteForm />} />  
